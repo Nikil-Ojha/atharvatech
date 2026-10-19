@@ -302,7 +302,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="bg-dark-second rounded p-4 text-center border hover-shadow">
                                 <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px;">
-                                    <i class="fa fa-python text-white" style="font-size: 20px;"></i>
+                                    <i class="fab fa-python text-white" style="font-size: 20px;"></i>
                                 </div>
                                 <h5 class="mb-2">Python</h5>
                                 <p class="small text-muted mb-0">AI &amp; Automation</p>
@@ -311,7 +311,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="bg-dark-second rounded p-4 text-center border hover-shadow">
                                 <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px;">
-                                    <i class="fa fa-table-alt text-white" style="font-size: 20px;"></i>
+                                    <i class="fa fa-table text-white" style="font-size: 20px;"></i>
                                 </div>
                                 <h5 class="mb-2">PostgreSQL</h5>
                                 <p class="small text-muted mb-0">Relational DB</p>
@@ -320,7 +320,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="bg-dark-second rounded p-4 text-center border hover-shadow">
                                 <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px;">
-                                    <i class="fa fa-github text-white" style="font-size: 20px;"></i>
+                                    <i class="fab fa-github text-white" style="font-size: 20px;"></i>
                                 </div>
                                 <h5 class="mb-2">Git &amp; CI/CD</h5>
                                 <p class="small text-muted mb-0">Version Control</p>

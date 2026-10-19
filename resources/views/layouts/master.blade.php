@@ -10,16 +10,12 @@
     <!-- Favicon -->
     <link href="{{ asset('favicon.ico') }}" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <!-- Google Web Fonts (self-hosted) -->
+    <link href="{{ asset('css/fonts/google-fonts.css') }}" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet (self-hosted) -->
+    <link href="{{ asset('lib/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
@@ -151,7 +147,7 @@
             <div class="row gx-5">
                 <div class="col-lg-8 col-md-12 mx-auto pt-5 mb-5">
                     <div class="row gx-5">
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <div class="col-lg-3 col-md-6 pt-0 pt-lg-5 mb-5">
                             <div class="section-title section-title-sm position-relative pb-3 mb-4">
                                 <h3 class="text-light mb-0">Quick Links</h3>
                             </div>
@@ -170,7 +166,7 @@
                                         class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <div class="col-lg-3 col-md-6 pt-0 pt-lg-5 mb-5">
                             <div class="section-title section-title-sm position-relative pb-3 mb-4">
                                 <h3 class="text-light mb-0">Services</h3>
                             </div>
@@ -189,7 +185,7 @@
                                         class="bi bi-arrow-right text-primary me-2"></i>DevOps & Deployment</a>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <div class="col-lg-3 col-md-6 pt-0 pt-lg-5 mb-5">
                             <div class="section-title section-title-sm position-relative pb-3 mb-4">
                                 <h3 class="text-light mb-0">Company</h3>
                             </div>
@@ -206,6 +202,35 @@
                                         class="bi bi-arrow-right text-primary me-2"></i>Get a Quote</a>
                                 <a class="text-light" href="{{ route('contact') }}"><i
                                         class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Contact Details</h3>
+                            </div>
+                            <div class="d-flex flex-column justify-content-start">
+                                <div class="d-flex align-items-start mb-3">
+                                    <i class="fa fa-map-marker-alt text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="text-light mb-1">Office Address</h6>
+                                        <p class="text-light mb-0 text-opacity-75">588, Sector 30 Fardiabad HR
+                                            121003</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-3">
+                                    <i class="fa fa-phone-alt text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="text-light mb-1">Phone</h6>
+                                        <p class="text-light mb-0 text-opacity-75">+91 7011418852</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-3">
+                                    <i class="fa fa-envelope-open text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="text-light mb-1">Email</h6>
+                                        <p class="text-light mb-0 text-opacity-75">atharvaaojha@gmail.com</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -232,9 +257,9 @@
             class="bi bi-arrow-up"></i></a>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Libraries (self-hosted) -->
+    <script src="{{ asset('js/vendor/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('js/vendor/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
     <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
     <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
