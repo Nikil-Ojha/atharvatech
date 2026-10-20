@@ -4,33 +4,13 @@
 @section('meta', '<meta content="Atharva Technologies, software development, custom software, mobile app, web development, AI, cloud" name="keywords">
     <meta content="Atharva Technologies - Custom software development and digital products" name="description">')
 @section('content')
-<!-- Full Screen Search Start -->
-<div class="modal fade" id="searchModal" tabindex="-1">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
-            <div class="modal-header border-0">
-                <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body d-flex align-items-center justify-content-center">
-                <div class="input-group" style="max-width: 600px;">
-                    <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                    <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Full Screen Search End -->
+@include('partials.search-modal')
 
 
 <!-- Pricing Plan Start -->
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5">
-        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
-            <h5 class="fw-bold text-primary text-uppercase">Pricing Plans</h5>
-            <h1 class="mb-0">One-Time Delivery Pricing</h1>
-            <p class="text-muted mb-0">All charges are estimated. Includes delivery + maintenance + 24×7 support (except Starter and Basic plans).</p>
-        </div>
+@include('partials.section-title', ['title' => 'Pricing Plans', 'subtitle' => 'One-Time Delivery Pricing', 'description' => 'All charges are estimated. Includes delivery + maintenance + 24×7 support (except Starter and Basic plans).', 'wrapperClass' => 'text-center position-relative pb-3 mb-5 mx-auto', 'style' => 'max-width: 700px;'])
 
         <div class="row g-4 justify-content-center">
             <!-- ₹500 1-Page Landing Page -->
@@ -60,6 +40,7 @@
                             <div class="pricing-feature-row fail"><span>SEO Basic</span><i class="fa fa-times"></i></div>
                         </div>
                         <a href="{{ route('quote') }}" class="btn btn-primary w-100 py-3 mt-4 pricing-btn-interactive">Get Started</a>
+@include('partials.whatsapp-button', ['class' => 'w-100 py-3 mt-2'])
                     </div>
                 </div>
             </div>
@@ -91,6 +72,7 @@
                             <div class="pricing-feature-row fail"><span>Blog</span><i class="fa fa-times"></i></div>
                         </div>
                         <a href="{{ route('quote') }}" class="btn btn-primary w-100 py-3 mt-4 pricing-btn-interactive">Get Started</a>
+@include('partials.whatsapp-button', ['class' => 'w-100 py-3 mt-2'])
                     </div>
                 </div>
             </div>
@@ -122,6 +104,7 @@
                             <div class="pricing-feature-row fail"><span>E-Commerce</span><i class="fa fa-times"></i></div>
                         </div>
                         <a href="{{ route('quote') }}" class="btn btn-white w-100 py-3 mt-4 pricing-btn-interactive">Get Started</a>
+@include('partials.whatsapp-button', ['class' => 'w-100 py-3 mt-2'])
                     </div>
                 </div>
             </div>
@@ -153,6 +136,7 @@
                             <div class="pricing-feature-row fail"><span>Subscription</span><i class="fa fa-times"></i></div>
                         </div>
                         <a href="{{ route('quote') }}" class="btn btn-primary w-100 py-3 mt-4 pricing-btn-interactive">Get Started</a>
+@include('partials.whatsapp-button', ['class' => 'w-100 py-3 mt-2'])
                     </div>
                 </div>
             </div>
@@ -184,6 +168,7 @@
                             <div class="pricing-feature-row fail"><span>AI Integration</span><i class="fa fa-times"></i></div>
                         </div>
                         <a href="{{ route('quote') }}" class="btn btn-primary w-100 py-3 mt-4 pricing-btn-interactive">Get Started</a>
+@include('partials.whatsapp-button', ['class' => 'w-100 py-3 mt-2'])
                     </div>
                 </div>
             </div>
@@ -215,6 +200,7 @@
                             <div class="pricing-feature-row fail"><span>White Label</span><i class="fa fa-times"></i></div>
                         </div>
                         <a href="{{ route('quote') }}" class="btn btn-primary w-100 py-3 mt-4 pricing-btn-interactive">Get Started</a>
+@include('partials.whatsapp-button', ['class' => 'w-100 py-3 mt-2'])
                     </div>
                 </div>
             </div>
@@ -246,16 +232,14 @@
                     </div>
                 </div>
                 <p class="mt-3 text-muted">Final pricing may vary based on specific requirements. Contact us for a custom quote.</p>
-                <a href="{{ route('quote') }}" class="btn btn-primary py-3 px-5 mt-3">Request Custom Quote</a>
+                <a href="{{ route('quote') }}" class="btn btn-primary py-3 px-5 mt-3 me-3">Request Custom Quote</a>
+@include('partials.whatsapp-button', ['class' => 'py-3 px-5 mt-3'])
             </div>
         </div>
 
         <!-- FAQ Section -->
         <div class="mt-5 wow fadeInUp" data-wow-delay="0.8s">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Frequently Asked Questions</h5>
-                <h1 class="mb-0">Everything You Need to Know</h1>
-            </div>
+@include('partials.section-title', ['title' => 'Frequently Asked Questions', 'subtitle' => 'Everything You Need to Know', 'wrapperClass' => 'text-center position-relative pb-3 mb-5 mx-auto', 'style' => 'max-width: 600px;'])
             <div class="faq-accordion">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">

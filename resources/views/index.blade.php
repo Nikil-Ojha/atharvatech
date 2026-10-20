@@ -12,7 +12,7 @@
                     <h5 class="text-white text-uppercase mb-3 animated slideInDown">Custom Software Development</h5>
                     <h1 class="display-1 text-white mb-md-4 animated zoomIn">We Build Scalable Software<br><span style="color:var(--accent)">That Powers Your Business</span></h1>
                     <a href="{{ route('quote') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get a Free Quote</a>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+@include('partials.whatsapp-button', ['class' => 'py-md-3 px-md-5 animated slideInRight'])
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                     <h5 class="text-white text-uppercase mb-3 animated slideInDown">Enterprise Software Solutions</h5>
                     <h1 class="display-1 text-white mb-md-4 animated zoomIn">From Concept to Deployment<br><span style="color:var(--accent)">We Deliver Production-Ready Code</span></h1>
                     <a href="{{ route('quote') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get a Free Quote</a>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+@include('partials.whatsapp-button', ['class' => 'py-md-3 px-md-5 animated slideInRight'])
                 </div>
             </div>
         </div>
@@ -42,23 +42,7 @@
 @endsection
 
 @section('content')
-<!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(2, 6, 23, .9);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Search our services...">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Full Screen Search End -->
+@include('partials.search-modal')
 
 
     <!-- Facts Start -->
@@ -68,33 +52,33 @@
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
                     <div class="bg-dark-second shadow d-flex align-items-center justify-content-center p-4" style="height: 170px; border: 1px solid rgba(248,250,252,0.06); border-radius: var(--radius);">
                         <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 64px; height: 64px;">
-                            <i class="fa fa-users text-primary"></i>
+                            <i class="fa fa-users text-primary" style="font-size: 64px;"></i>
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Happy Clients</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">250+</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up" data-num="25">25+</h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
                     <div class="bg-dark-second shadow d-flex align-items-center justify-content-center p-4" style="height: 170px; border: 1px solid rgba(248,250,252,0.06); border-radius: var(--radius);">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 64px; height: 64px;">
-                            <i class="fa fa-check text-white"></i>
+                            <i class="fa fa-check text-warning" style="font-size: 64px;"></i>
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Projects Delivered</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">150+</h1>
+                            <h1 class="mb-0" data-toggle="counter-up" data-num="50">50+</h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
                     <div class="bg-dark-second shadow d-flex align-items-center justify-content-center p-4" style="height: 170px; border: 1px solid rgba(248,250,252,0.06); border-radius: var(--radius);">
                         <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 64px; height: 64px;">
-                            <i class="fa fa-award text-primary"></i>
+                            <i class="fa fa-award text-primary" style="font-size: 64px;"></i>
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Years Experience</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">10+</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up" data-num="10">10+</h1>
                         </div>
                     </div>
                 </div>
@@ -109,10 +93,7 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
-                        <h1 class="mb-0">Custom Software Built for Your Growth</h1>
-                    </div>
+@include('partials.section-title', ['title' => 'About Us', 'subtitle' => 'Custom Software Built for Your Growth', 'wrapperClass' => 'position-relative pb-3 mb-5', 'style' => ''])
                     <p class="mb-4">Atharva Technologies is a premium software development firm that helps startups and enterprises turn ideas into production-ready digital products. We specialize in custom software development, mobile applications, cloud architecture, and AI-powered solutions—built with clean code, modern architecture, and a focus on scalability.</p>
                     <div class="row g-0 mb-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
@@ -124,16 +105,9 @@
                             <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>24/7 Technical Support</h5>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 64px; height: 64px;">
-                            <i class="fa fa-phone-alt text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Start Your Project</h5>
-                            <h4 class="text-primary mb-0">+91 7011418852</h4>
-                        </div>
-                    </div>
-                    <a href="{{ route('quote') }}" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Request a Proposal</a>
+@include('partials.contact-info-card', ['icon' => 'fa-phone-alt', 'label' => 'Start Your Project', 'value' => '+91 7011418852', 'delay' => '0.6s', 'wrapperClass' => 'mb-4 wow fadeIn', 'width' => '64px', 'link' => 'tel:+917011418852'])
+                    <a href="{{ route('quote') }}" class="btn btn-primary py-3 px-5 mt-3 me-3 wow zoomIn" data-wow-delay="0.9s">Request a Proposal</a>
+@include('partials.whatsapp-button', ['class' => 'py-3 px-5 mt-3 wow zoomIn'])
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
@@ -149,10 +123,7 @@
     <!-- Features Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
-                <h5 class="fw-bold text-primary text-uppercase">Why Choose Us</h5>
-                <h1 class="mb-0">Engineering Excellence You Can Trust</h1>
-            </div>
+@include('partials.section-title', ['title' => 'Why Choose Us', 'subtitle' => 'Engineering Excellence You Can Trust', 'wrapperClass' => 'text-center position-relative pb-3 mb-5 mx-auto', 'style' => 'max-width: 700px;'])
             <div class="row g-5">
                 <div class="col-lg-4">
                     <div class="row g-5">
@@ -204,10 +175,7 @@
     <!-- Tech Stack Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
-                <h5 class="fw-bold text-primary text-uppercase">Tech Stack</h5>
-                <h1 class="mb-0">Modern Technologies We Use</h1>
-            </div>
+@include('partials.section-title', ['title' => 'Tech Stack', 'subtitle' => 'Modern Technologies We Use', 'wrapperClass' => 'text-center position-relative pb-3 mb-5 mx-auto', 'style' => 'max-width: 700px;'])
             <div class="row g-4">
                 <!-- Featured Blog -->
                 <div class="col-lg-4 col-md-6 wow slideInUp" data-wow-delay="0.2s">
@@ -220,7 +188,7 @@
                             <div class="col-md-6 col-sm-6">
                                 <div class="bg-dark-second rounded p-4 text-center border hover-shadow">
                                     <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px;">
-                                        <i class="fa fa-code text-white" style="font-size: 20px;"></i>
+                                        <i class="fab fa-laravel text-white" style="font-size: 20px;"></i>
                                     </div>
                                     <h5 class="mb-2">Laravel</h5>
                                     <p class="small text-muted mb-0">Full Stack Framework</p>
@@ -229,7 +197,7 @@
                             <div class="col-md-6 col-sm-6">
                                 <div class="bg-dark-second rounded p-4 text-center border hover-shadow">
                                     <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px;">
-                                        <i class="fa fa-code text-white" style="font-size: 20px;"></i>
+                                        <i class="fa fa-database text-white" style="font-size: 20px;"></i>
                                     </div>
                                     <h5 class="mb-2">Mysql</h5>
                                     <p class="small text-muted mb-0">Most Popular RDBMS</p>
@@ -337,76 +305,20 @@
     <!-- Service Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
-                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
-                <h1 class="mb-0">End-to-End Software Development</h1>
-            </div>
+@include('partials.section-title', ['title' => 'Our Services', 'subtitle' => 'End-to-End Software Development', 'wrapperClass' => 'text-center position-relative pb-3 mb-5 mx-auto', 'style' => 'max-width: 700px;'])
             <div class="row g-5">
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item bg-dark-second rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                            <i class="fa fa-laptop-code text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Custom Software Development</h4>
-                        <p class="m-0">Tailored web and desktop applications built to your exact business requirements with modern tech stacks.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="{{ route('services') }}">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="service-item bg-dark-second rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                            <i class="fa fa-mobile-alt text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Mobile App Development</h4>
-                        <p class="m-0">Native and cross-platform iOS and Android apps with smooth UI/UX and seamless performance.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="{{ route('services') }}">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
-                    <div class="service-item bg-dark-second rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                            <i class="fa fa-paint-brush text-white"></i>
-                        </div>
-                        <h4 class="mb-3">UI/UX Design</h4>
-                        <p class="m-0">User-centered interface design that combines aesthetics with usability for exceptional digital experiences.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="{{ route('services') }}">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item bg-dark-second rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                            <i class="fa fa-cloud text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Cloud Solutions</h4>
-                        <p class="m-0">Cloud-native architecture, migration, and deployment on AWS, Azure, and Google Cloud Platform.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="{{ route('services') }}">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="service-item bg-dark-second rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                            <i class="fa fa-brain text-white"></i>
-                        </div>
-                        <h4 class="mb-3">AI & Machine Learning</h4>
-                        <p class="m-0">Intelligent automation, predictive analytics, and AI-powered features integrated into your software.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="{{ route('services') }}">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
+@include('partials.service-item', ['icon' => 'fa-laptop-code', 'title' => 'Custom Software Development', 'description' => 'Tailored web and desktop applications built to your exact business requirements with modern tech stacks.', 'delay' => '0.3s', 'link' => route('services')])
+@include('partials.service-item', ['icon' => 'fa-mobile-alt', 'title' => 'Mobile App Development', 'description' => 'Native and cross-platform iOS and Android apps with smooth UI/UX and seamless performance.', 'delay' => '0.6s', 'link' => route('services')])
+@include('partials.service-item', ['icon' => 'fa-paint-brush', 'title' => 'UI/UX Design', 'description' => 'User-centered interface design that combines aesthetics with usability for exceptional digital experiences.', 'delay' => '0.9s', 'link' => route('services')])
+@include('partials.service-item', ['icon' => 'fa-cloud', 'title' => 'Cloud Solutions', 'description' => 'Cloud-native architecture, migration, and deployment on AWS, Azure, and Google Cloud Platform.', 'delay' => '0.3s', 'link' => route('services')])
+@include('partials.service-item', ['icon' => 'fa-brain', 'title' => 'AI & Machine Learning', 'description' => 'Intelligent automation, predictive analytics, and AI-powered features integrated into your software.', 'delay' => '0.6s', 'link' => route('services')])
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
                     <div class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
                         <h3 class="text-white mb-3">Start Your Project</h3>
                         <p class="text-white mb-3">Let's build your next digital product together.</p>
-                        <h2 class="text-white mb-0">+91 7011418852</h2>
+                        <h2 class="text-white mb-3"><a class="text-white text-decoration-none"
+                                href="tel:+917011418852">+91 7011418852</a></h2>
+@include('partials.whatsapp-button', ['class' => 'py-2 px-4'])
                     </div>
                 </div>
             </div>
@@ -418,10 +330,7 @@
     <!-- Pricing Plan Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
-                <h5 class="fw-bold text-primary text-uppercase">Pricing Plans</h5>
-                <h1 class="mb-0">Flexible Plans for Every Stage</h1>
-            </div>
+@include('partials.section-title', ['title' => 'Pricing Plans', 'subtitle' => 'Flexible Plans for Every Stage', 'wrapperClass' => 'text-center position-relative pb-3 mb-5 mx-auto', 'style' => 'max-width: 700px;'])
             <div class="row g-0">
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                     <div class="bg-dark-second rounded">
@@ -440,7 +349,8 @@
                             <div class="d-flex justify-content-between mb-3"><span>Custom Subdomain Only</span><i class="fa fa-check text-primary pt-1"></i></div>
                             {{-- <div class="d-flex justify-content-between mb-3"><span>Basic SEO</span><i class="fa fa-times text-secondary pt-1"></i></div>
                             <div class="d-flex justify-content-between mb-2"><span>Email Support</span><i class="fa fa-times text-secondary pt-1"></i></div> --}}
-                            <a href="{{ route('quote') }}" class="btn btn-primary py-2 px-4 mt-4">Get Started</a>
+                            <a href="{{ route('quote') }}" class="btn btn-primary py-2 px-4 mt-4 me-2">Get Started</a>
+@include('partials.whatsapp-button', ['class' => 'py-2 px-4 mt-4'])
                         </div>
                     </div>
                 </div>
@@ -460,7 +370,8 @@
                             <div class="d-flex justify-content-between mb-3"><span>Mobile Responsive</span><i class="fa fa-check text-primary pt-1"></i></div>
                             <div class="d-flex justify-content-between mb-3"><span>Advanced SEO</span><i class="fa fa-check text-primary pt-1"></i></div>
                             {{-- <div class="d-flex justify-content-between mb-2"><span>Priority Support</span><i class="fa fa-times text-secondary pt-1"></i></div> --}}
-                            <a href="{{ route('quote') }}" class="btn btn-primary py-2 px-4 mt-4">Get Started</a>
+                            <a href="{{ route('quote') }}" class="btn btn-primary py-2 px-4 mt-4 me-2">Get Started</a>
+@include('partials.whatsapp-button', ['class' => 'py-2 px-4 mt-4'])
                         </div>
                     </div>
                 </div>
@@ -479,7 +390,8 @@
                             <div class="d-flex justify-content-between mb-3"><span>Full Feature Set</span><i class="fa fa-check text-primary pt-1"></i></div>
                             <div class="d-flex justify-content-between mb-3"><span>24/7 Technical Support</span><i class="fa fa-check text-primary pt-1"></i></div>
                             <div class="d-flex justify-content-between mb-2"><span>Dedicated Manager</span><i class="fa fa-check text-primary pt-1"></i></div>
-                            <a href="{{ route('quote') }}" class="btn btn-primary py-2 px-4 mt-4">Get Started</a>
+                            <a href="{{ route('quote') }}" class="btn btn-primary py-2 px-4 mt-4 me-2">Get Started</a>
+@include('partials.whatsapp-button', ['class' => 'py-2 px-4 mt-4'])
                         </div>
                     </div>
                 </div>
@@ -494,10 +406,7 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">Request a Quote</h5>
-                        <h1 class="mb-0">Let's Build Something Amazing Together</h1>
-                    </div>
+@include('partials.section-title', ['title' => 'Request a Quote', 'subtitle' => 'Let\'s Build Something Amazing Together', 'wrapperClass' => 'position-relative pb-3 mb-5', 'style' => ''])
                     <div class="row gx-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
                             <h5 class="mb-4"><i class="fa fa-clock text-primary me-3"></i>Reply within 24 hours</h5>
@@ -507,41 +416,36 @@
                         </div>
                     </div>
                     <p class="mb-4">Share your project requirements with us. Our team will analyze your needs and send you a detailed proposal with timeline and cost estimates.</p>
-                    <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 64px; height: 64px;">
-                            <i class="fa fa-phone-alt text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Start Your Project</h5>
-                            <h4 class="text-primary mb-0">+91 7011418852</h4>
-                        </div>
-                    </div>
+@include('partials.contact-info-card', ['icon' => 'fa-phone-alt', 'label' => 'Start Your Project', 'value' => '+91 7011418852', 'delay' => '0.6s', 'wrapperClass' => 'mt-2 wow zoomIn', 'width' => '64px', 'link' => 'tel:+917011418852'])
                 </div>
                 <div class="col-lg-5">
                     <div class="quote-form wow zoomIn" data-wow-delay="0.9s">
-                        <form>
+                        <form id="proposalForm">
                             <div class="row g-3">
                                 <div class="col-xl-12">
-                                    <input type="text" class="form-control" placeholder="Your Name" style="height: 60px;">
+                                    <input type="text" name="Name" class="form-control" placeholder="Your Name" style="height: 60px;">
                                 </div>
                                 <div class="col-12">
-                                    <input type="email" class="form-control" placeholder="Your Email" style="height: 60px;">
+                                    <input type="email" name="Email" class="form-control" placeholder="Your Email" style="height: 60px;">
                                 </div>
                                 <div class="col-12">
-                                    <select class="form-select" style="height: 60px;">
-                                        <option selected>Select a Service</option>
-                                        <option value="software">Custom Software Development</option>
-                                        <option value="mobile">Mobile App Development</option>
-                                        <option value="design">UI/UX Design</option>
-                                        <option value="cloud">Cloud Solutions</option>
-                                        <option value="ai">AI & Machine Learning</option>
+                                    <select class="form-select" name="Service" style="height: 60px;">
+                                        <option value="" selected>Select a Service</option>
+                                        <option value="Custom Software Development">Custom Software Development</option>
+                                        <option value="Mobile App Development">Mobile App Development</option>
+                                        <option value="UI/UX Design">UI/UX Design</option>
+                                        <option value="Cloud Solutions">Cloud Solutions</option>
+                                        <option value="AI & Machine Learning">AI &amp; Machine Learning</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control" rows="4" placeholder="Tell us about your project..."></textarea>
+                                    <textarea class="form-control" name="Message" rows="4" placeholder="Tell us about your project..."></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Proposal Request</button>
+                                    <a href="@whatsapp" target="_blank" rel="noopener noreferrer" data-whatsapp-form="proposalForm"
+                                        class="btn btn-whatsapp w-100 py-3">
+                                        <i class="fab fa-whatsapp me-2"></i>Send Proposal Request
+                                    </a>
                                 </div>
                             </div>
                         </form>
@@ -556,137 +460,25 @@
     <!-- Client Testimonials Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 700px;">
-                <h5 class="fw-bold text-primary text-uppercase">Client Client Testimonialss</h5>
-                <h1 class="mb-0">What Our Clients Say About Our Software</h1>
-            </div>
+@include('partials.section-title', ['title' => 'Client Client Testimonialss', 'subtitle' => 'What Our Clients Say About Our Software', 'wrapperClass' => 'text-center position-relative pb-3 mb-4 mx-auto', 'style' => 'max-width: 700px;'])
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                <div class="testimonial-item bg-dark-second my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-white mb-1">Sarah Chen</h4>
-                            <small class="text-uppercase">CTO, FinTech Startup</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Atharva Technologies delivered our core platform ahead of schedule. The code quality is exceptional and the team was highly professional throughout."
-                    </div>
-                </div>
-                <div class="testimonial-item bg-dark-second my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-white mb-1">Marcus Rivera</h4>
-                            <small class="text-uppercase">Product Manager, HealthTech</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Outstanding mobile app development. They understood our vision perfectly and built a scalable solution that our users love."
-                    </div>
-                </div>
-                <div class="testimonial-item bg-dark-second my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-white mb-1">Elena Petrova</h4>
-                            <small class="text-uppercase">Founder, SaaS Platform</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "From UI/UX design to cloud deployment, Atharva handled everything. Our platform now handles thousands of users seamlessly."
-                    </div>
-                </div>
-                <div class="testimonial-item bg-dark-second my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-white mb-1">James Wilson</h4>
-                            <small class="text-uppercase">Operations Director, Logistics</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Professional, responsive, and technically excellent. The custom software they built transformed our business operations."
-                    </div>
-                </div>
+@include('partials.testimonial-item', ['image' => 'img/testimonial-1.jpg', 'name' => 'Sarah Chen', 'profession' => 'CTO, FinTech Startup', 'quote' => 'Atharva Technologies delivered our core platform ahead of schedule. The code quality is exceptional and the team was highly professional throughout.', 'nameClass' => 'text-white'])
+@include('partials.testimonial-item', ['image' => 'img/testimonial-2.jpg', 'name' => 'Marcus Rivera', 'profession' => 'Product Manager, HealthTech', 'quote' => 'Outstanding mobile app development. They understood our vision perfectly and built a scalable solution that our users love.', 'nameClass' => 'text-white'])
+@include('partials.testimonial-item', ['image' => 'img/testimonial-3.jpg', 'name' => 'Elena Petrova', 'profession' => 'Founder, SaaS Platform', 'quote' => 'From UI/UX design to cloud deployment, Atharva handled everything. Our platform now handles thousands of users seamlessly.', 'nameClass' => 'text-white'])
+@include('partials.testimonial-item', ['image' => 'img/testimonial-4.jpg', 'name' => 'James Wilson', 'profession' => 'Operations Director, Logistics', 'quote' => 'Professional, responsive, and technically excellent. The custom software they built transformed our business operations.', 'nameClass' => 'text-white'])
             </div>
         </div>
     </div>
     <!-- Client Testimonials End -->
 
 
-    <!-- Team Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
-                <h5 class="fw-bold text-primary text-uppercase">Our Team</h5>
-                <h1 class="mb-0">Engineers Who Care About Code Quality</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-dark-second rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-github fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Arjun Mehta</h4>
-                            <p class="text-uppercase m-0">Lead Software Engineer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="team-item bg-dark-second rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-github fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Priya Sharma</h4>
-                            <p class="text-uppercase m-0">UI/UX Designer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                    <div class="team-item bg-dark-second rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-3.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-github fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Daniel Kim</h4>
-                            <p class="text-uppercase m-0">DevOps Engineer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
+    @include('partials.team')
 
 
     <!-- Blog Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
-                <h5 class="fw-bold text-primary text-uppercase">Insights</h5>
-                <h1 class="mb-0">Latest from Our Engineering Blog</h1>
-            </div>
+@include('partials.section-title', ['title' => 'Insights', 'subtitle' => 'Latest from Our Engineering Blog', 'wrapperClass' => 'text-center position-relative pb-3 mb-5 mx-auto', 'style' => 'max-width: 700px;'])
             <div class="row g-5">
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                     <div class="blog-item bg-dark-second rounded overflow-hidden">
@@ -696,10 +488,10 @@
                         </div>
                         <div class="p-4">
                             <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>Arjun Mehta</small>
+                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>Nikil Ojha</small>
                                 <small><i class="far fa-calendar-alt text-primary me-2"></i>15 Jan, 2025</small>
                             </div>
-                            <h4 class="mb-3">Building Scalable Microservices with Node.js</h4>
+                            <h4 class="mb-3">Building Scalable Microservices with Php/Node.js/Mysql/Python</h4>
                             <p>Best practices for architecting microservices that scale and stay maintainable as your team grows.</p>
                             <a class="text-uppercase" href="{{ route('detail') }}">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
@@ -745,23 +537,5 @@
     <!-- Blog End -->
 
 
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5 mb-5">
-            <div class="bg-dark-second rounded p-4">
-                <div class="owl-carousel vendor-carousel">
-                    <img src="img/vendor-1.jpg" alt="">
-                    <img src="img/vendor-2.jpg" alt="">
-                    <img src="img/vendor-3.jpg" alt="">
-                    <img src="img/vendor-4.jpg" alt="">
-                    <img src="img/vendor-5.jpg" alt="">
-                    <img src="img/vendor-6.jpg" alt="">
-                    <img src="img/vendor-7.jpg" alt="">
-                    <img src="img/vendor-8.jpg" alt="">
-                    <img src="img/vendor-9.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Vendor End -->
+@include('partials.vendor-carousel')
 @endsection

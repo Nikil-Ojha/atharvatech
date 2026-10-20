@@ -8,7 +8,8 @@
     <meta content="@yield('meta')" name="description">
 
     <!-- Favicon -->
-    <link href="{{ asset('favicon.ico') }}" rel="icon">
+    <link href="{{ asset('img/logo.png') }}" rel="icon" type="image/png">
+    <link href="{{ asset('img/logo.png') }}" rel="apple-touch-icon">
 
     <!-- Google Web Fonts (self-hosted) -->
     <link href="{{ asset('css/fonts/google-fonts.css') }}" rel="stylesheet">
@@ -44,22 +45,30 @@
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>588, Sector 30 Fardiabad HR
                         121003</small>
-                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+91 7011418852</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>atharvaaojha@gmail.com</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i><a
+                            class="text-light text-decoration-none" href="tel:+917011418852">+91 7011418852</a></small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i><a
+                            class="text-light text-decoration-none"
+                            href="mailto:atharvaaojha@gmail.com">atharvaaojha@gmail.com</a></small>
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
-                            class="fab fa-twitter fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                    {{-- <a class="btn btn-sm me-2" href="https://www.facebook.com/atharvaojhatech/"
+                        style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;background:#1DA1F2;color:#fff;border:none;border-radius:6px;"><i
+                            class="fab fa-twitter fw-normal"></i></a> --}}
+                    <a class="btn btn-sm me-2" href="https://www.facebook.com/atharvaojhatech/"
+                        style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;background:#3B5998;color:#fff;border:none;border-radius:6px;"><i
                             class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
-                            class="fab fa-linkedin-in fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                    <a class="btn btn-sm me-2" href="@whatsapp"
+                        style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;background:rgb(22, 216, 71);color:#fff;border:none;border-radius:6px;"><i
+                            class="fab fa-whatsapp fw-normal"></i></a>
+                    {{-- <a class="btn btn-sm me-2" href="javascript:void(0);"
+                        style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;background:#E4405F;color:#fff;border:none;border-radius:6px;"><i
                             class="fab fa-instagram fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i
-                            class="fab fa-youtube fw-normal"></i></a>
+                    <a class="btn btn-sm" href="javascript:void(0);"
+                        style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;background:#FF0000;color:#fff;border:none;border-radius:6px;"><i
+                            class="fab fa-youtube fw-normal"></i></a> --}}
                 </div>
             </div>
         </div>
@@ -70,8 +79,9 @@
     <!-- Navbar Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="{{ route('home') }}" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>Atharva Technologies</h1>
+            <a href="{{ route('home') }}" class="navbar-brand p-0 d-flex align-items-center">
+                <img src="{{ asset('img/logo.png') }}" alt="Atharva Technologies" style="height: 45px; margin-right: 10px;">
+                <h1 class="m-0">Atharva Technologies</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -84,25 +94,26 @@
                         class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">About</a>
                     <a href="{{ route('services') }}"
                         class="nav-item nav-link {{ request()->routeIs('services') ? 'active' : '' }}">Services</a>
-                    <div class="nav-item dropdown">
-                        <a href="#"
+                    {{-- Blog dropdown hidden from navigation --}}
+                    {{-- <div class="nav-item dropdown">
+                        <a href="javascript:void(0);"
                             class="nav-link dropdown-toggle {{ request()->routeIs('blog', 'detail') ? 'active' : '' }}"
                             data-bs-toggle="dropdown">Blog</a>
                         <div class="dropdown-menu m-0">
                             <a href="{{ route('blog') }}" class="dropdown-item">Blog Grid</a>
                             <a href="{{ route('detail') }}" class="dropdown-item">Blog Detail</a>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="nav-item dropdown">
-                        <a href="#"
+                        <a href="javascript:void(0);"
                             class="nav-link dropdown-toggle {{ request()->routeIs('price', 'feature', 'team', 'testimonial', 'quote') ? 'active' : '' }}"
-                            data-bs-toggle="dropdown">Pages</a>
+                            data-bs-toggle="dropdown">Work</a>
                         <div class="dropdown-menu m-0">
                             <a href="{{ route('price') }}" class="dropdown-item">Pricing Plan</a>
                             <a href="{{ route('feature') }}" class="dropdown-item">Our features</a>
                             <a href="{{ route('team') }}" class="dropdown-item">Team Members</a>
-                            <a href="{{ route('testimonial') }}" class="dropdown-item">Testimonial</a>
-                            <a href="{{ route('quote') }}" class="dropdown-item">Free Quote</a>
+                            {{-- <a href="{{ route('testimonial') }}" class="dropdown-item">Testimonial</a>
+                            <a href="{{ route('quote') }}" class="dropdown-item">Free Quote</a> --}}
                         </div>
                     </div>
                     <a href="{{ route('contact') }}"
@@ -142,118 +153,183 @@
     @yield('content')
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light mt-5">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-8 col-md-12 mx-auto pt-5 mb-5">
-                    <div class="row gx-5">
-                        <div class="col-lg-3 col-md-6 pt-0 pt-lg-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Quick Links</h3>
-                            </div>
-                            <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="{{ route('home') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                                <a class="text-light mb-2" href="{{ route('about') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                                <a class="text-light mb-2" href="{{ route('services') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                                <a class="text-light mb-2" href="{{ route('team') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
-                                <a class="text-light mb-2" href="{{ route('blog') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
-                                <a class="text-light" href="{{ route('contact') }}"><i
+    <footer class="footer-section bg-dark text-light px-4">
+        <!-- Top Bar: Brand + Social -->
+        <div class="container-fluid py-3 px-4 px-lg-0">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-4 text-center text-lg-start">
+                    <a href="{{ route('home') }}" class="text-decoration-none d-flex align-items-center justify-content-center justify-content-lg-start">
+                        <img src="{{ asset('img/logo.png') }}" alt="Atharva Technologies" style="height: 40px; margin-right: 8px;">
+                        <h1 class="m-0 fw-bold" style="font-size: 1.5rem; letter-spacing: -0.5px; color:white; margin:0;">
+                            Atharva<span style="color: var(--bs-primary);">Technologies</span></h1>
+                    </a>
+                </div>
+                <div class="col-lg-4 text-center text-lg-start">
+                    <p class="mb-0 text-opacity-75 small">Premium digital solutions for modern businesses.</p>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    {{-- <div class="d-flex justify-content-center justify-content-lg-end gap-2">
+                        <a class="text-white text-opacity-75 hover:text-white" href="javascript:void(0);" style="width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08);border-radius:6px;"><i class="fab fa-facebook-f"></i></a>
+                        <a class="text-white text-opacity-75 hover:text-white" href="javascript:void(0);" style="width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08);border-radius:6px;"><i class="fab fa-twitter"></i></a>
+                        <a class="text-white text-opacity-75 hover:text-white" href="javascript:void(0);" style="width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08);border-radius:6px;"><i class="fab fa-instagram"></i></a>
+                        <a class="text-white text-opacity-75 hover:text-white" href="javascript:void(0);" style="width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08);border-radius:6px;"><i class="fab fa-linkedin-in"></i></a>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer Grid -->
+        <div class="container-fluid py-4 px-4 px-lg-0">
+            <div class="row g-3 gy-lg-4">
+                <!-- About / Company -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h5 class="footer-title text-white mb-3 position-relative d-inline-block">About Us</h5>
+                        <p class="text-opacity-75 mb-3 small">We deliver innovative software solutions, mobile apps,
+                            and AI-powered platforms that help businesses scale and succeed in the digital era.</p>
+                        <div class="d-flex gap-2">
+                            <a class="text-white text-opacity-75 hover:text-white" href="https://www.facebook.com/atharvaojhatech/"
+                                style="width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08);border-radius:6px;"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="text-white text-opacity-75 hover:text-white" href="@whatsapp"
+                                style="width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08);border-radius:6px;"><i
+                                    class="fab fa-whatsapp"></i></a>
+
+                            {{-- <a class="text-white text-opacity-75 hover:text-white" href="javascript:void(0);"
+                                style="width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08);border-radius:6px;"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="text-white text-opacity-75 hover:text-white" href="javascript:void(0);"
+                                style="width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08);border-radius:6px;"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="text-white text-opacity-75 hover:text-white" href="javascript:void(0);"
+                                style="width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08);border-radius:6px;"><i
+                                    class="fab fa-linkedin-in"></i></a> --}}
+                        </div>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h5 class="footer-title text-white mb-3 position-relative d-inline-block">Quick Links</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-1"><a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('home') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Home</a></li>
+                            <li class="mb-1"><a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('about') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>About Us</a></li>
+                            <li class="mb-1"><a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('services') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Services</a></li>
+                            <li class="mb-1"><a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('team') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a></li>
+                            <li class="mb-1"><a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('blog') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a></li>
+                            <li class="mb-0 d-flex align-items-center">
+                                <a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('contact') }}"><i
                                         class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 pt-0 pt-lg-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Services</h3>
-                            </div>
-                            <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="{{ route('services') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Software Development</a>
-                                <a class="text-light mb-2" href="{{ route('services') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Mobile App Development</a>
-                                <a class="text-light mb-2" href="{{ route('services') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>UI/UX Design</a>
-                                <a class="text-light mb-2" href="{{ route('services') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Cloud Solutions</a>
-                                <a class="text-light mb-2" href="{{ route('services') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>AI & Machine Learning</a>
-                                <a class="text-light" href="{{ route('services') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>DevOps & Deployment</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 pt-0 pt-lg-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Company</h3>
-                            </div>
-                            <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="{{ route('about') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                                <a class="text-light mb-2" href="{{ route('blog') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Blog</a>
-                                <a class="text-light mb-2" href="{{ route('testimonial') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Testimonials</a>
-                                <a class="text-light mb-2" href="{{ route('price') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Pricing</a>
-                                <a class="text-light mb-2" href="{{ route('quote') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Get a Quote</a>
-                                <a class="text-light" href="{{ route('contact') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 pt-0 pt-lg-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Contact Details</h3>
-                            </div>
-                            <div class="d-flex flex-column justify-content-start">
-                                <div class="d-flex align-items-start mb-3">
-                                    <i class="fa fa-map-marker-alt text-primary me-3 mt-1"></i>
-                                    <div>
-                                        <h6 class="text-light mb-1">Office Address</h6>
-                                        <p class="text-light mb-0 text-opacity-75">588, Sector 30 Fardiabad HR
-                                            121003</p>
-                                    </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Services -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h5 class="footer-title text-white mb-3 position-relative d-inline-block">Our Services</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-1"><a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('services') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Software Development</a></li>
+                            <li class="mb-1"><a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('services') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Mobile App Development</a></li>
+                            <li class="mb-1"><a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('services') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>UI/UX Design</a></li>
+                            <li class="mb-1"><a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('services') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Cloud Solutions</a></li>
+                            <li class="mb-1"><a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('services') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>AI &amp; Machine Learning</a>
+                            </li>
+                            <li class="mb-0"><a class="text-light text-decoration-none hover:text-white small"
+                                    href="{{ route('services') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>DevOps &amp; Deployment</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Contact Details -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h5 class="footer-title text-white mb-3 position-relative d-inline-block">Contact Details</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2 d-flex align-items-start">
+                                <i class="fa fa-map-marker-alt text-primary me-3 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <div class="text-opacity-75 small">Office Address</div>
+                                    <div class="text-white small">588, Sector 30 Fardiabad HR 121003</div>
                                 </div>
-                                <div class="d-flex align-items-start mb-3">
-                                    <i class="fa fa-phone-alt text-primary me-3 mt-1"></i>
-                                    <div>
-                                        <h6 class="text-light mb-1">Phone</h6>
-                                        <p class="text-light mb-0 text-opacity-75">+91 7011418852</p>
-                                    </div>
+                            </li>
+                            <li class="mb-2 d-flex align-items-start">
+                                <i class="fa fa-phone-alt text-primary me-3 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <div class="text-opacity-75 small">Phone</div>
+                                    <div class="text-white small"><a class="text-white text-decoration-none"
+                                            href="tel:+917011418852">+91 7011418852</a></div>
                                 </div>
-                                <div class="d-flex align-items-start mb-3">
-                                    <i class="fa fa-envelope-open text-primary me-3 mt-1"></i>
-                                    <div>
-                                        <h6 class="text-light mb-1">Email</h6>
-                                        <p class="text-light mb-0 text-opacity-75">atharvaaojha@gmail.com</p>
-                                    </div>
+                            </li>
+                            <li class="mb-0 d-flex align-items-start">
+                                <i class="fa fa-envelope-open text-primary me-3 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <div class="text-opacity-75 small">Email</div>
+                                    <div class="text-white small"><a class="text-white text-decoration-none"
+                                            href="mailto:atharvaaojha@gmail.com">atharvaaojha@gmail.com</a></div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid text-white" style="background: #061429;">
-        <div class="container text-center">
+
+        <!-- Newsletter -->
+        {{-- <div class="container-fluid py-3 px-4 px-lg-0" style="background: rgba(255,255,255,0.04);">
             <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-6">
-                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <span>Atharva Technologies</span>. All Rights Reserved.</p>
+                <div class="col-lg-8 text-center">
+                    <h5 class="text-white mb-3">Subscribe to our newsletter</h5>
+                    <p class="text-opacity-75 small mb-3">Get the latest updates and insights delivered to your inbox.
+                    </p>
+                    <div class="input-group" style="max-width: 440px; margin: 0 auto;">
+                        <input type="email" class="form-control bg-dark-second border-secondary"
+                            placeholder="Enter your email" style="height: 42px; border-radius: 6px 0 0 6px;">
+                        <button class="btn btn-primary"
+                            style="height: 42px; border-radius: 0 6px 6px 0;">Subscribe</button>
                     </div>
                 </div>
             </div>
+        </div> --}}
         </div>
-    </div>
+
+        <!-- Bottom Copyright -->
+        <div class="container-fluid py-3 px-4 px-lg-0">
+            <div class="row align-items-center g-3">
+                <div class="col-12 text-center">
+                    <p class="mb-0 text-opacity-75 small">&copy; <span>Atharva Technologies</span>. All Rights
+                        Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- Footer End -->
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i
+    <a href="javascript:void(0);" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i
             class="bi bi-arrow-up"></i></a>
 
 

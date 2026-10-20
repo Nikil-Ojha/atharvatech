@@ -53,11 +53,32 @@
     });
 
 
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
-    });
+    // Facts counter (vanilla JS, no jQuery dependency)
+    const counterElements = document.querySelectorAll('[data-toggle="counter-up"]');
+    if (counterElements.length > 0 && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-num') || el.textContent.replace(/\D/g, ''), 10);
+                    const suffix = el.textContent.replace(/[\d,.]/g, '');
+                    let current = 0;
+                    const increment = target / 100;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            el.textContent = target + suffix;
+                            clearInterval(timer);
+                        } else {
+                            el.textContent = Math.floor(current) + suffix;
+                        }
+                    }, 20);
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        counterElements.forEach(el => observer.observe(el));
+    }
     
     
     // Back to top button
@@ -71,6 +92,52 @@
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
+    });
+
+
+    // WhatsApp deep links
+    // Links marked with [data-whatsapp-form] point at a form id. Instead of
+    // submitting the form, the visitor's details are appended to the default
+    // WhatsApp message and the chat is opened with everything pre-filled.
+    var whatsappForms = document.querySelectorAll('[data-whatsapp-form]');
+    whatsappForms.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            var form = document.getElementById(link.getAttribute('data-whatsapp-form'));
+            if (!form) {
+                return;
+            }
+
+            var details = [];
+            form.querySelectorAll('input[name], select[name], textarea[name]').forEach(function (field) {
+                var value = (field.value || '').trim();
+
+                if (field.tagName === 'SELECT') {
+                    value = (field.options[field.selectedIndex] || {}).text || '';
+                    value = value.trim();
+                }
+
+                if (!value) {
+                    return;
+                }
+
+                details.push(field.getAttribute('name') + ': ' + value);
+            });
+
+            if (!details.length) {
+                return;
+            }
+
+            event.preventDefault();
+
+            var base = link.href.split('?')[0];
+            var message = link.href.indexOf('?text=') !== -1
+                ? decodeURIComponent(link.href.split('?text=')[1] || '')
+                : '';
+            var url = base + '?text=' + encodeURIComponent(message + '\n\n' + details.join('\n'))
+                .replace(/'/g, '%27');
+
+            window.open(url, '_blank', 'noopener');
+        });
     });
 
 

@@ -4,23 +4,7 @@
 @section('meta', '<meta content="Atharva Technologies, software development, custom software, mobile app, web development, AI, cloud" name="keywords">
     <meta content="Atharva Technologies - Custom software development and digital products" name="description">')
 @section('content')
-<!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Full Screen Search End -->
+@include('partials.search-modal')
 
 
     <!-- Blog Start -->
@@ -41,9 +25,7 @@
     
                     <!-- Comment List Start -->
                     <div class="mb-5">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">3 Comments</h3>
-                        </div>
+@include('partials.section-title', ['title' => '3 Comments', 'type' => 'sidebar'])
                         <div class="d-flex mb-4">
                             <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
                             <div class="ps-3">
@@ -73,9 +55,7 @@
     
                     <!-- Comment Form Start -->
                     <div class="bg-dark-second rounded p-5">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">Leave A Comment</h3>
-                        </div>
+@include('partials.section-title', ['title' => 'Leave A Comment', 'type' => 'sidebar'])
                         <form>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
@@ -112,24 +92,20 @@
     
                     <!-- Category Start -->
                     <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">Categories</h3>
-                        </div>
+@include('partials.section-title', ['title' => 'Categories', 'type' => 'sidebar'])
                         <div class="link-animated d-flex flex-column justify-content-start">
-                            <a class="h5 fw-semi-bold bg-dark-second rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Web Design</a>
-                            <a class="h5 fw-semi-bold bg-dark-second rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>UI/UX Design</a>
-                            <a class="h5 fw-semi-bold bg-dark-second rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>UI/UX Design</a>
-                            <a class="h5 fw-semi-bold bg-dark-second rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Keyword Research</a>
-                            <a class="h5 fw-semi-bold bg-dark-second rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Email Marketing</a>
+                            <a class="h5 fw-semi-bold bg-dark-second rounded py-2 px-3 mb-2" href="javascript:void(0);"><i class="bi bi-arrow-right me-2"></i>Web Design</a>
+                            <a class="h5 fw-semi-bold bg-dark-second rounded py-2 px-3 mb-2" href="javascript:void(0);"><i class="bi bi-arrow-right me-2"></i>UI/UX Design</a>
+                            <a class="h5 fw-semi-bold bg-dark-second rounded py-2 px-3 mb-2" href="javascript:void(0);"><i class="bi bi-arrow-right me-2"></i>UI/UX Design</a>
+                            <a class="h5 fw-semi-bold bg-dark-second rounded py-2 px-3 mb-2" href="javascript:void(0);"><i class="bi bi-arrow-right me-2"></i>Keyword Research</a>
+                            <a class="h5 fw-semi-bold bg-dark-second rounded py-2 px-3 mb-2" href="javascript:void(0);"><i class="bi bi-arrow-right me-2"></i>Email Marketing</a>
                         </div>
                     </div>
                     <!-- Category End -->
     
                     <!-- Recent Post Start -->
                     <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">Recent Post</h3>
-                        </div>
+@include('partials.section-title', ['title' => 'Recent Post', 'type' => 'sidebar'])
                         <div class="d-flex rounded overflow-hidden mb-3">
                             <img class="img-fluid" src="img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
                             <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-dark-second px-3 mb-0">Related Article
@@ -171,9 +147,7 @@
     
                     <!-- Tags Start -->
                     <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">Tag Cloud</h3>
-                        </div>
+@include('partials.section-title', ['title' => 'Tag Cloud', 'type' => 'sidebar'])
                         <div class="d-flex flex-wrap m-n1">
                             <a href="" class="btn btn-light m-1">Design</a>
                             <a href="" class="btn btn-light m-1">Development</a>
@@ -193,9 +167,7 @@
     
                     <!-- Plain Text Start -->
                     <div class="wow slideInUp" data-wow-delay="0.1s">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">Plain Text</h3>
-                        </div>
+@include('partials.section-title', ['title' => 'Plain Text', 'type' => 'sidebar'])
                         <div class="bg-dark-second text-center" style="padding: 30px;">
                             <p>Explore more insights on software architecture, cloud-native development, and engineering best practices from our team.</p>
                             <a href="" class="btn btn-primary py-2 px-4">Read More</a>
@@ -210,23 +182,5 @@
     <!-- Blog End -->
 
 
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5 mb-5">
-            <div class="bg-white">
-                <div class="owl-carousel vendor-carousel">
-                    <img src="img/vendor-1.jpg" alt="">
-                    <img src="img/vendor-2.jpg" alt="">
-                    <img src="img/vendor-3.jpg" alt="">
-                    <img src="img/vendor-4.jpg" alt="">
-                    <img src="img/vendor-5.jpg" alt="">
-                    <img src="img/vendor-6.jpg" alt="">
-                    <img src="img/vendor-7.jpg" alt="">
-                    <img src="img/vendor-8.jpg" alt="">
-                    <img src="img/vendor-9.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Vendor End -->
+@include('partials.vendor-carousel')
 @endsection

@@ -4,23 +4,7 @@
 @section('meta', '<meta content="Atharva Technologies, software development, custom software, mobile app, web development, AI, cloud" name="keywords">
     <meta content="Atharva Technologies - Custom software development and digital products" name="description">')
 @section('content')
-<!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Full Screen Search End -->
+@include('partials.search-modal')
 
 
     <!-- Quote Start -->
@@ -28,10 +12,7 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">Request A Quote</h5>
-                        <h1 class="mb-0">Let's Build Something Amazing Together</h1>
-                    </div>
+@include('partials.section-title', ['title' => 'Request A Quote', 'subtitle' => 'Let\'s Build Something Amazing Together', 'wrapperClass' => 'position-relative pb-3 mb-5', 'style' => ''])
                     <div class="row gx-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
                             <h5 class="mb-4"><i class="fa fa-clock text-primary me-3"></i>Reply within 24 hours</h5>
@@ -41,39 +22,36 @@
                         </div>
                     </div>
                     <p class="mb-4">Choose the plan that fits your business stage. All plans include clean code, documentation, and ongoing support. Contact us for custom enterprise pricing.</p>
-                    <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-phone-alt text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">+91 7011418852</h4>
-                        </div>
-                    </div>
+@include('partials.contact-info-card', ['icon' => 'fa-phone-alt', 'label' => 'Call to ask any question', 'value' => '+91 7011418852', 'delay' => '0.6s', 'wrapperClass' => 'mt-2 wow zoomIn', 'link' => 'tel:+917011418852'])
                 </div>
                 <div class="col-lg-5">
                     <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
-                        <form>
+                        <form id="quoteForm">
                             <div class="row g-3">
                                 <div class="col-xl-12">
-                                    <input type="text" class="form-control bg-dark-second border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" name="Name" class="form-control bg-dark-second border-0" placeholder="Your Name" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <input type="email" class="form-control bg-dark-second border-0" placeholder="Your Email" style="height: 55px;">
+                                    <input type="email" name="Email" class="form-control bg-dark-second border-0" placeholder="Your Email" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <select class="form-select bg-dark-second border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
+                                    <select class="form-select bg-dark-second border-0" name="Service" style="height: 55px;">
+                                        <option value="" selected>Select A Service</option>
+                                        <option value="Custom Software Development">Custom Software Development</option>
+                                        <option value="Mobile App Development">Mobile App Development</option>
+                                        <option value="UI/UX Design">UI/UX Design</option>
+                                        <option value="Cloud Solutions">Cloud Solutions</option>
+                                        <option value="AI & Machine Learning">AI &amp; Machine Learning</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control bg-dark-second border-0" rows="3" placeholder="Message"></textarea>
+                                    <textarea class="form-control bg-dark-second border-0" name="Message" rows="3" placeholder="Message"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
+                                    <a href="@whatsapp" target="_blank" rel="noopener noreferrer" data-whatsapp-form="quoteForm"
+                                        class="btn btn-whatsapp w-100 py-3">
+                                        <i class="fab fa-whatsapp me-2"></i>Request A Quote
+                                    </a>
                                 </div>
                             </div>
                         </form>
@@ -85,23 +63,5 @@
     <!-- Quote End -->
 
 
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5 mb-5">
-            <div class="bg-white">
-                <div class="owl-carousel vendor-carousel">
-                    <img src="img/vendor-1.jpg" alt="">
-                    <img src="img/vendor-2.jpg" alt="">
-                    <img src="img/vendor-3.jpg" alt="">
-                    <img src="img/vendor-4.jpg" alt="">
-                    <img src="img/vendor-5.jpg" alt="">
-                    <img src="img/vendor-6.jpg" alt="">
-                    <img src="img/vendor-7.jpg" alt="">
-                    <img src="img/vendor-8.jpg" alt="">
-                    <img src="img/vendor-9.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Vendor End -->
+@include('partials.vendor-carousel')
 @endsection

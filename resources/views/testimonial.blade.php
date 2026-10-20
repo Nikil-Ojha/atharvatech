@@ -4,104 +4,23 @@
 @section('meta', '<meta content="Atharva Technologies, software development, custom software, mobile app, web development, AI, cloud" name="keywords">
     <meta content="Atharva Technologies - Custom software development and digital products" name="description">')
 @section('content')
-<!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Full Screen Search End -->
+@include('partials.search-modal')
 
 
     <!-- Client Testimonials Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Client Testimonials</h5>
-                <h1 class="mb-0">What Our Clients Say About Our Software</h1>
-            </div>
+@include('partials.section-title', ['title' => 'Client Testimonials', 'subtitle' => 'What Our Clients Say About Our Software', 'wrapperClass' => 'text-center position-relative pb-3 mb-4 mx-auto', 'style' => 'max-width: 600px;'])
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                <div class="testimonial-item bg-dark-second my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Atharva Technologies delivered exceptional code quality and professional service throughout our project."
-                    </div>
-                </div>
-                <div class="testimonial-item bg-dark-second my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Atharva Technologies delivered exceptional code quality and professional service throughout our project."
-                    </div>
-                </div>
-                <div class="testimonial-item bg-dark-second my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Atharva Technologies delivered exceptional code quality and professional service throughout our project."
-                    </div>
-                </div>
-                <div class="testimonial-item bg-dark-second my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Atharva Technologies delivered exceptional code quality and professional service throughout our project."
-                    </div>
-                </div>
+@include('partials.testimonial-item', ['image' => 'img/testimonial-1.jpg', 'name' => 'Client Name', 'profession' => 'Profession', 'quote' => 'Atharva Technologies delivered exceptional code quality and professional service throughout our project.', 'nameClass' => 'text-primary'])
+@include('partials.testimonial-item', ['image' => 'img/testimonial-2.jpg', 'name' => 'Client Name', 'profession' => 'Profession', 'quote' => 'Atharva Technologies delivered exceptional code quality and professional service throughout our project.', 'nameClass' => 'text-primary'])
+@include('partials.testimonial-item', ['image' => 'img/testimonial-3.jpg', 'name' => 'Client Name', 'profession' => 'Profession', 'quote' => 'Atharva Technologies delivered exceptional code quality and professional service throughout our project.', 'nameClass' => 'text-primary'])
+@include('partials.testimonial-item', ['image' => 'img/testimonial-4.jpg', 'name' => 'Client Name', 'profession' => 'Profession', 'quote' => 'Atharva Technologies delivered exceptional code quality and professional service throughout our project.', 'nameClass' => 'text-primary'])
             </div>
         </div>
     </div>
     <!-- Client Testimonials End -->
 
 
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5 mb-5">
-            <div class="bg-white">
-                <div class="owl-carousel vendor-carousel">
-                    <img src="img/vendor-1.jpg" alt="">
-                    <img src="img/vendor-2.jpg" alt="">
-                    <img src="img/vendor-3.jpg" alt="">
-                    <img src="img/vendor-4.jpg" alt="">
-                    <img src="img/vendor-5.jpg" alt="">
-                    <img src="img/vendor-6.jpg" alt="">
-                    <img src="img/vendor-7.jpg" alt="">
-                    <img src="img/vendor-8.jpg" alt="">
-                    <img src="img/vendor-9.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Vendor End -->
+@include('partials.vendor-carousel')
 @endsection
