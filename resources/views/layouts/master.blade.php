@@ -78,15 +78,26 @@
 
     <!-- Navbar Start -->
     <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-5 py-3 py-lg-0">
             <a href="{{ route('home') }}" class="navbar-brand p-0 d-flex align-items-center">
                 <img src="{{ asset('img/logo.png') }}" alt="Atharva Technologies" style="height: 45px; margin-right: 10px;">
                 <h1 class="m-0">Atharva Technologies</h1>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="mobile-drawer-header d-flex d-lg-none align-items-center justify-content-between w-100 pb-3 mb-2">
+                    <a href="{{ route('home') }}" class="d-flex align-items-center text-decoration-none">
+                        <img src="{{ asset('img/logo.png') }}" alt="Atharva Technologies" style="height: 32px; margin-right: 8px;">
+                        <span class="fw-bold mobile-drawer-title">Atharva Technologies</span>
+                    </a>
+                    <button type="button" class="btn mobile-drawer-close p-1" data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse" aria-label="Close navigation">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
                 <div class="navbar-nav ms-auto py-0">
                     <a href="{{ route('home') }}"
                         class="nav-item nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
@@ -119,12 +130,15 @@
                     <a href="{{ route('contact') }}"
                         class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
                 </div>
-                <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal"
-                    data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
-                <button type="button" class="theme-toggle ms-3" id="themeToggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
+                <div class="d-flex align-items-center mt-3 mt-lg-0 pt-3 pt-lg-0 mobile-drawer-actions">
+                    <button type="button" class="btn text-primary ms-0 ms-lg-3" data-bs-toggle="modal"
+                        data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+                    <button type="button" class="theme-toggle ms-3" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
+            <div class="navbar-backdrop d-lg-none" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"></div>
         </nav>
         @yield('navbar_extra')
     </div>
@@ -153,9 +167,9 @@
     @yield('content')
 
     <!-- Footer Start -->
-    <footer class="footer-section bg-dark text-light px-4">
+    <footer class="footer-section bg-dark text-light px-3 px-lg-4">
         <!-- Top Bar: Brand + Social -->
-        <div class="container-fluid py-3 px-4 px-lg-0">
+        <div class="container-fluid py-3 px-0">
             <div class="row align-items-center g-3">
                 <div class="col-lg-4 text-center text-lg-start">
                     <a href="{{ route('home') }}" class="text-decoration-none d-flex align-items-center justify-content-center justify-content-lg-start">
@@ -179,7 +193,7 @@
         </div>
 
         <!-- Main Footer Grid -->
-        <div class="container-fluid py-4 px-4 px-lg-0">
+        <div class="container-fluid py-4 px-0">
             <div class="row g-3 gy-lg-4">
                 <!-- About / Company -->
                 <div class="col-lg-3 col-md-6">
@@ -316,7 +330,7 @@
         </div>
 
         <!-- Bottom Copyright -->
-        <div class="container-fluid py-3 px-4 px-lg-0">
+        <div class="container-fluid py-3 px-0">
             <div class="row align-items-center g-3">
                 <div class="col-12 text-center">
                     <p class="mb-0 text-opacity-75 small">&copy; <span>Atharva Technologies</span>. All Rights
